@@ -14,8 +14,8 @@ func GenerateRandomAlphabeticString(n int) (string, error) {
 
 func GenerateRandomString(n int, charset string) (string, error) {
 	b := make([]byte, n)
-	max := byte(len(charset))
-	if max == 0 {
+	max_len := byte(len(charset))
+	if max_len == 0 {
 		return "", fmt.Errorf("empty charset")
 	}
 
@@ -32,7 +32,7 @@ func GenerateRandomString(n int, charset string) (string, error) {
 	// Map to actual characters
 	result := make([]byte, n)
 	for i, v := range b {
-		result[i] = charset[v%max]
+		result[i] = charset[v%max_len]
 	}
 	return string(result), nil
 }
