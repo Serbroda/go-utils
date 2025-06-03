@@ -9,7 +9,7 @@ const CharsetAlphabetic = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const Charset = CharsetAlphabetic + "0123456789_-"
 
 func GenerateRandomAlphabeticString(n int) (string, error) {
-	return GenerateRandomString(n, Charset)
+	return GenerateRandomString(n, CharsetAlphabetic)
 }
 
 func GenerateRandomString(n int, charset string) (string, error) {
